@@ -3,12 +3,24 @@ document.getElementById("forgotForm").addEventListener("submit", async function(
 
   const email = document.getElementById("email").value;
 
-  const response = await fetch("https://scpf-backend.onrender.com/api/forgot-password", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email })
-  });
+  try {
+    const response = await fetch("https://scpf-backend.onrender.com/api/forgot-password", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email })
+    });
 
-  const data = await response.json();
-  document.getElementById("message").innerText = data.message;
+    const data = await response.json();
+
+    if (response.ok) {
+      document.getElementById("message").innerText = data.message;
+    } else {
+      document.getElementById("message").innerText = data.message || "Erreur lors de l'envoi de l'email.";
+    }
+  } catch (error) {
+    console.error("Erreur lors de la demande de réinitialisation :", error);
+    document.getElementById("message").innerText = "Erreur serveur. Réessayez plus tard.";
+  }
 });

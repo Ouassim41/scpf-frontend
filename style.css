@@ -35,3 +35,88 @@ a {
   color: #007bff;
   text-decoration: none;
 }
+/* ---- Reset de base ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ---- Fond général ---- */
+body {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ---- Container principal ---- */
+.login-container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* ---- Logo ---- */
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+/* ---- Titres ---- */
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* ---- Champs de formulaire ---- */
+form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ---- Boutons ---- */
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff6300;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #e45500;
+}
+
+/* ---- Liens ---- */
+p a {
+  color: #ff6300;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Message ---- */
+#message {
+  margin-top: 10px;
+  color: red;
+  font-size: 14px;
+}
